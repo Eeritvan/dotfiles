@@ -99,6 +99,7 @@
       "wheel"
       "docker"
       "kvm"
+      "gamemode"
     ];
   };
 
@@ -191,6 +192,16 @@
   services.blueman.enable = true;
 
   hardware.keyboard.zsa.enable = true;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = false;
+    dedicatedServer.openFirewall = false;
+    localNetworkGameTransfers.openFirewall = false;
+  };
+
+  programs.gamemode.enable = true;
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
