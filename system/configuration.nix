@@ -186,6 +186,7 @@
 
   services.blueman.enable = true;
 
+  hardware.keyboard.zsa.enable = true;
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
