@@ -13,6 +13,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # gc and optimization
   nix.settings.auto-optimise-store = true;
@@ -88,7 +89,6 @@
       "docker"
       "kvm"
     ];
-    packages = with pkgs; [ ];
   };
 
   # packages
