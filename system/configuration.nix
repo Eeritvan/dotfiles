@@ -37,6 +37,10 @@
   ];
 
   networking.hostName = "nixos"; # Define your hostname.
+
+  networking.firewall.enable = true;
+  networking.nftables.enable = true;
+
   services.tailscale.enable = true;
   services.tailscale.extraDaemonFlags = [ "--no-logs-no-support" ];
 
