@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   unstable,
   ...
 }:
@@ -11,8 +12,14 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = lib.mkForce false;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/var/lib/sbctl";
+  };
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # gc and optimization
@@ -107,6 +114,7 @@
     pkgs.nixd
     pkgs.nil
     pkgs.libinput
+    pkgs.sbctl # for secure boot
   ];
 
   services.libinput.enable = true;

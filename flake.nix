@@ -22,6 +22,11 @@
       url = "github:zed-industries/zed";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -29,6 +34,7 @@
       self,
       nixpkgs,
       home-manager,
+      lanzaboote,
       ...
     }@inputs:
     let
@@ -71,7 +77,7 @@
             inherit inputs unstable;
           };
           modules = [
-            # > Our main nixos configuration file <
+            lanzaboote.nixosModules.lanzaboote
             ./system/configuration.nix
           ];
         };
