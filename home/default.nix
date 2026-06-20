@@ -15,6 +15,7 @@
     ./hyprlock
     ./tmux
     ./zen
+    ./brave
   ];
 
   nixpkgs = {

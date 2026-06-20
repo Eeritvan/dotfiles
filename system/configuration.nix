@@ -109,7 +109,6 @@
   environment.systemPackages = [
     pkgs.ghostty
     pkgs.wofi
-    unstable.brave
     unstable.zed-editor
     unstable.go
     unstable.nodejs
