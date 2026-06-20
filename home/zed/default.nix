@@ -18,6 +18,11 @@
     ];
     userSettings = {
       middle_click_paste = false;
+      redact_private_values = true;
+      wrap_guides = [
+        80
+        120
+      ];
       theme = {
         mode = "dark";
         dark = "Ayu Dark";
@@ -30,12 +35,18 @@
       tab_bar = {
         show_nav_history_buttons = false;
       };
+      collaboration_panel = {
+        button = false;
+      };
       buffer_font_features = {
         calt = false;
       };
       telemetry = {
         diagnostics = false;
         metrics = false;
+      };
+      agent = {
+        sidebar_side = "right";
       };
       languages = {
         JavaScript = {
