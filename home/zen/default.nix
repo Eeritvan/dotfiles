@@ -18,6 +18,8 @@
       search = import ./search-config.nix { inherit pkgs; };
       settings = {
         "devtools.theme" = "dark";
+        "devtools.toolbox.host" = "right";
+
         "ui.systemUsesDarkTheme" = 1;
         "browser.theme.content-theme" = 2;
         "browser.theme.toolbar-theme" = 2;

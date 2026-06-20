@@ -53,6 +53,16 @@ in
       id = "ublock-origin";
       pinned = false;
     };
+
+    "78272b6fa58f4a1abaac99321d503a20@proton.me" = mkExtensionEntry {
+      id = "proton-pass";
+      pinned = true;
+    };
+
+    "@react-devtools" = mkExtensionEntry {
+      id = "react-devtools";
+      pinned = false;
+    };
   };
 
   Preferences = mkLockedAttrs {
