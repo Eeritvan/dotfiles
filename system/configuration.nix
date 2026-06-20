@@ -93,7 +93,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.eeritvan = {
     isNormalUser = true;
-    description = "Eetu Ritvanen";
+    description = "Eeritvan";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -107,16 +107,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = [
-    pkgs.ghostty
-    pkgs.wofi
-    unstable.zed-editor
-    unstable.go
-    unstable.nodejs
-    unstable.bun
-    pkgs.pavucontrol
-    pkgs.nixd
-    pkgs.nil
-    pkgs.libinput
     pkgs.sbctl # for secure boot
   ];
 

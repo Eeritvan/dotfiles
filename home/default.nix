@@ -3,6 +3,7 @@
   # lib,
   # config,
   pkgs,
+  unstable,
   ...
 }:
 {
@@ -16,6 +17,7 @@
     ./tmux
     ./zen
     ./brave
+    ./ghostty
   ];
 
   nixpkgs = {
@@ -44,6 +46,16 @@
   };
 
   home.packages = [
+    # pkgs.ghostty
+    pkgs.wofi
+    unstable.go
+    unstable.nodejs
+    unstable.bun
+    pkgs.pavucontrol
+    pkgs.nixd
+    pkgs.nil
+    pkgs.libinput
+
     pkgs.gcc
     pkgs.binutils
     pkgs.goose
