@@ -18,6 +18,7 @@
     ./zen
     ./brave
     ./ghostty
+    ./wayle
   ];
 
   nixpkgs = {

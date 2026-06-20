@@ -129,9 +129,6 @@
     };
   };
 
-  programs.hyprland.enable = true;
-  programs.waybar.enable = true;
-
   services.hardware.openrgb = {
     enable = true;
     package = unstable.openrgb-with-all-plugins;
@@ -180,6 +177,7 @@
     };
   };
 
+  services.upower.enable = true;
   services.blueman.enable = true;
 
   hardware.keyboard.zsa.enable = true;

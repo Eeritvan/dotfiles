@@ -2,9 +2,6 @@
   wayland.windowManager.hyprland = {
     enable = true;
     configType = "hyprlang";
-    # plugins = [
-    #   pkgs.hyprlock
-    # ];
     settings = {
       ###################
       ### MY PROGRAMS ###
@@ -12,7 +9,6 @@
 
       # See https://wiki.hypr.land/Configuring/Keywords/
       "$terminal" = "ghostty";
-      "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
       "$mainMod" = "SUPER";
 
@@ -33,10 +29,7 @@
 
       # exec-once = $terminal
       # exec-once = nm-applet &
-      # exec-once = waybar & hyprpaper & firefox
-      exec-once = [
-        "waybar"
-      ];
+      # exec-once = hyprpaper & firefox
 
       #############################
       ### ENVIRONMENT VARIABLES ###
@@ -217,6 +210,7 @@
         # "$mainMod, J, togglesplit, # dwindle"
         "$mainMod, F, fullscreen,"
         "$mainMod, L, exec, hyprlock"
+        "$mainMod SHIFT, B, exec, killall -SIGUSR2 waybar || waybar"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
