@@ -114,7 +114,6 @@
     unstable.go
     unstable.nodejs
     unstable.bun
-    unstable.openrgb-with-all-plugins
     pkgs.pavucontrol
     pkgs.nixd
     pkgs.nil
@@ -144,7 +143,10 @@
   programs.hyprland.enable = true;
   programs.waybar.enable = true;
 
-  services.hardware.openrgb.enable = true;
+  services.hardware.openrgb = {
+    enable = true;
+    package = unstable.openrgb-with-all-plugins;
+  };
 
   # zsh as default shell
   users.defaultUserShell = pkgs.zsh;

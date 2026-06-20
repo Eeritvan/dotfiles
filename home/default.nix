@@ -1,5 +1,5 @@
 {
-  inputs,
+  # inputs,
   # lib,
   # config,
   pkgs,
@@ -14,6 +14,7 @@
     ./ssh
     ./hyprlock
     ./tmux
+    ./zen
   ];
 
   nixpkgs = {
@@ -42,8 +43,6 @@
   };
 
   home.packages = [
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-
     pkgs.gcc
     pkgs.binutils
     pkgs.goose
