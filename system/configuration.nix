@@ -103,6 +103,17 @@
     ];
   };
 
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "start-hyprland";
+        user = "eeritvan";
+      };
+      default_session = initial_session;
+    };
+  };
+
   # packages
   nixpkgs.config.allowUnfree = true;
 
