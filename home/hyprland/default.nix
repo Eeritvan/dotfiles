@@ -30,6 +30,9 @@
       # exec-once = $terminal
       # exec-once = nm-applet &
       # exec-once = hyprpaper & firefox
+      # exec-once = [
+      #   "hyprlock"
+      # ];
 
       #############################
       ### ENVIRONMENT VARIABLES ###

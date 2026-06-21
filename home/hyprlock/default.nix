@@ -5,9 +5,7 @@
       background = [
         {
           monitor = "";
-          # path = "screenshot";
-          path = "/home/justin/Pictures/wal.png";
-          # color = "rgb(17,17,27)";
+          path = "screenshot";
           blur_passes = 2;
           contrast = 1.0;
           brightness = 0.5;
@@ -26,7 +24,7 @@
 
       input-field = [
         {
-          monitor = "DP-5";
+          monitor = "DP-2";
           size = "250, 60";
           outline_thickness = 2;
           dots_size = 0.2;
@@ -48,7 +46,7 @@
 
       label = [
         {
-          monitor = "DP-5";
+          monitor = "DP-2";
           text = "cmd[update:1000] echo \"$(date +\"%A, %B %d\")\"";
           color = "rgba(242, 243, 244, 0.75)";
           font_size = 22;
@@ -58,7 +56,7 @@
           valign = "center";
         }
         {
-          monitor = "DP-5";
+          monitor = "DP-2";
           text = "cmd[update:1000] echo \"$(date +\"%-I:%M\")\"";
           color = "rgba(242, 243, 244, 0.75)";
           font_size = 95;
@@ -68,7 +66,7 @@
           valign = "center";
         }
         {
-          monitor = "DP-5";
+          monitor = "DP-2";
           text = "cmd[update:1000] echo \"$(/home/justin/Documents/Scripts/whatsong.sh)\"";
           color = "$foreground";
           # color = "rgba(255, 255, 255, 0.6)";
@@ -79,7 +77,7 @@
           valign = "bottom";
         }
         {
-          monitor = "DP-5";
+          monitor = "DP-2";
           text = "cmd[update:1000] echo \"$(/home/justin/Documents/Scripts/whoami.sh)\"";
           color = "$foreground";
           font_size = 14;
@@ -89,7 +87,7 @@
           valign = "top";
         }
         {
-          monitor = "DP-5";
+          monitor = "DP-2";
           text = "cmd[update:1000] echo \"$(/home/justin/Documents/Scripts/battery.sh)\"";
           color = "$foreground";
           font_size = 24;
@@ -99,7 +97,7 @@
           valign = "top";
         }
         {
-          monitor = "DP-5";
+          monitor = "DP-2";
           text = "cmd[update:1000] echo \"$(/home/justin/Documents/Scripts/network-status.sh)\"";
           color = "$foreground";
           font_size = 24;
@@ -107,28 +105,6 @@
           position = "-20, -10";
           halign = "right";
           valign = "top";
-        }
-      ];
-
-      image = [
-        {
-          path = "/home/justin/Pictures/profile_pictures/justin_square.png";
-          size = 100;
-          border_size = 2;
-          border_color = "$foreground";
-          position = "0, -100";
-          halign = "center";
-          valign = "center";
-        }
-        {
-          monitor = "DP-5";
-          path = "/home/justin/Pictures/profile_pictures/hypr.png";
-          size = 75;
-          border_size = 2;
-          border_color = "$foreground";
-          position = "-50, 50";
-          halign = "right";
-          valign = "bottom";
         }
       ];
     };

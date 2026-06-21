@@ -9,12 +9,12 @@
 {
   imports = [
     ./git
+    ./ssh
     ./zed
     ./zsh
     ./hyprland
-    ./ssh
     ./hyprlock
-    ./tmux
+    # ./tmux
     ./zen
     ./brave
     ./ghostty
