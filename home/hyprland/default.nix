@@ -70,7 +70,7 @@
           sensitivity = -0.3;
           clickfinger_behavior = true;
           natural_scroll = true;
-          scroll_factor = 0.10;
+          scroll_factor = 0.60;
         }
       ];
 
@@ -194,7 +194,8 @@
       misc = {
         "force_default_wallpaper" = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
         "disable_hyprland_logo" = false; # If true disables the random hyprland logo / anime girl background. :(
-        # vrr = 1
+        "disable_splash_rendering" = true;
+        vrr = 3;
       };
 
       ###################
@@ -211,7 +212,7 @@
         "$mainMod, R, exec, $menu"
         "$mainMod, P, pseudo, # dwindle"
         # "$mainMod, J, togglesplit, # dwindle"
-        "$mainMod, F, fullscreen,"
+        "$mainMod, F, fullscreen, 1"
         "$mainMod, L, exec, hyprlock"
         "$mainMod SHIFT, B, exec, killall -SIGUSR2 waybar || waybar"
 
