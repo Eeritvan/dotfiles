@@ -68,7 +68,6 @@
     pkgs.android-tools
     pkgs.android-studio
     pkgs.javaPackages.compiler.openjdk17
-    pkgs.fastfetch
   ];
 
   # programs.steam = {
