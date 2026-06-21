@@ -12,37 +12,47 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = lib.mkForce false;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader.systemd-boot.enable = lib.mkForce false;
+    loader.efi.canTouchEfiVariables = true;
 
-  boot.lanzaboote = {
-    enable = true;
-    pkiBundle = "/var/lib/sbctl";
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/var/lib/sbctl";
+    };
+
+    kernelPackages = pkgs.linuxPackages_latest;
   };
-
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # gc and optimization
-  nix.settings.auto-optimise-store = true;
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
+  nix = {
+    settings.auto-optimise-store = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+
+    # extra options
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
 
-  # extra options
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  networking = {
+    hostName = "nixos"; # Define your hostname.
 
-  networking.hostName = "nixos"; # Define your hostname.
+    firewall.enable = true;
+    nftables.enable = true;
 
-  networking.firewall.enable = true;
-  networking.nftables.enable = true;
+    networkmanager.enable = true;
+  };
 
-  services.tailscale.enable = true;
-  services.tailscale.extraDaemonFlags = [ "--no-logs-no-support" ];
+  services = {
+    tailscale.enable = true;
+    tailscale.extraDaemonFlags = [ "--no-logs-no-support" ];
+  };
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -51,7 +61,6 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Helsinki";
@@ -73,12 +82,14 @@
 
   # nvidia stuff
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia-container-toolkit.enable = true;
-  hardware.graphics.enable = true;
-  hardware.nvidia = {
-    modesetting.enable = true;
-    nvidiaSettings = true;
-    open = true;
+  hardware = {
+    nvidia-container-toolkit.enable = true;
+    graphics.enable = true;
+    nvidia = {
+      modesetting.enable = true;
+      nvidiaSettings = true;
+      open = true;
+    };
   };
 
   # Configure keymap in X11
@@ -147,7 +158,6 @@
 
   # zsh as default shell
   users.defaultUserShell = pkgs.zsh;
-  programs.zsh.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   # programs.mtr.enable = true;
@@ -156,8 +166,11 @@
   #   enableSSHSupport = true;
   # };
 
-  programs.nano.enable = false;
-  programs.vim.enable = true;
+  programs = {
+    zsh.enable = true;
+    vim.enable = true;
+    nano.enable = false;
+  };
 
   # bluetooth
   hardware.bluetooth = {
