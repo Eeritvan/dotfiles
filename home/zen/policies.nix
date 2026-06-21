@@ -35,7 +35,7 @@ in
   DisableTelemetry = true;
   NoDefaultBookmarks = true;
   OfferToSaveLogins = false;
-  HardwareAcceleration = false;
+  HardwareAcceleration = true;
   EnableTrackingProtection = {
     Value = true;
     Locked = true;
