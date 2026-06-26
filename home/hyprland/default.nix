@@ -99,7 +99,7 @@
       # https://wiki.hypr.land/Configuring/Variables/#general
       general = {
         gaps_in = 3;
-        gaps_out = 6;
+        gaps_out = 5;
 
         border_size = 2;
 
@@ -108,7 +108,7 @@
         "col.inactive_border" = "rgba(595959aa)";
 
         # Set to true enable resizing windows by clicking and dragging on borders and gaps
-        resize_on_border = false;
+        resize_on_border = true;
 
         # Please see https://wiki.hypr.land/Configuring/Tearing/ before you turn this on
         allow_tearing = false;
