@@ -1,5 +1,5 @@
 {
-  # inputs,
+  inputs,
   # lib,
   # config,
   pkgs,
@@ -57,6 +57,9 @@
     pkgs.nil
     pkgs.libinput
 
+    pkgs.better-control
+    pkgs.adwaita-icon-theme
+
     pkgs.gcc
     pkgs.binutils
     pkgs.goose
@@ -70,6 +73,8 @@
     pkgs.javaPackages.compiler.openjdk17
 
     unstable.statix
+
+    inputs.brave-origin.packages.${pkgs.system}.brave-origin
   ];
 
   # programs.steam = {
