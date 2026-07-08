@@ -56,6 +56,7 @@
     pkgs.nixd
     pkgs.nil
     pkgs.libinput
+    pkgs.python3
 
     pkgs.better-control
     pkgs.adwaita-icon-theme
