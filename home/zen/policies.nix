@@ -63,6 +63,11 @@ in
       id = "react-devtools";
       pinned = false;
     };
+
+    "{abfd162e-9948-403a-a75c-6e61184e1d47}" = mkExtensionEntry {
+      id = "solid-devtools";
+      pinned = false;
+    };
   };
 
   Preferences = mkLockedAttrs {
