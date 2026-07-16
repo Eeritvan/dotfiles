@@ -13,6 +13,7 @@
       "nginx"
       "graphql"
       "make"
+      "oxc"
       "git-firefly"
       "colored-zed-icons-theme"
     ];
