@@ -27,6 +27,8 @@
 
         "mousewheel.default.delta_multiplier_y" = 50;
         "browser.translations.automaticallyPopup" = false;
+
+        "zen.view.experimental-no-window-controls" = true;
       };
     };
   };
