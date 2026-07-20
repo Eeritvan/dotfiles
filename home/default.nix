@@ -73,6 +73,8 @@
     pkgs.android-studio
     pkgs.javaPackages.compiler.openjdk17
 
+    pkgs.awscli2
+
     unstable.statix
 
     inputs.brave-origin.packages.${pkgs.system}.brave-origin
