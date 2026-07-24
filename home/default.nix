@@ -19,6 +19,7 @@
     ./brave
     ./ghostty
     ./wayle
+    ./pi
   ];
 
   nixpkgs = {
@@ -74,6 +75,11 @@
     pkgs.javaPackages.compiler.openjdk17
 
     pkgs.awscli2
+
+    (unstable.llama-cpp.override {
+      cudaSupport = true;
+    })
+    unstable.pi-coding-agent
 
     unstable.statix
 

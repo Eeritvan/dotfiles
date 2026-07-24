@@ -18,6 +18,14 @@
       "colored-zed-icons-theme"
     ];
     userSettings = {
+      agent_servers = {
+        pi-acp = {
+          default_config_options =  {
+            thought_level = "high";
+          };
+          type = "registry";
+        };
+      };
       middle_click_paste = false;
       redact_private_values = true;
       wrap_guides = [
