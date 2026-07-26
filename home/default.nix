@@ -44,6 +44,7 @@
     # Configure your nixpkgs instance
     config = {
       allowUnfree = true;
+      cudaSupport = true;
     };
   };
 
