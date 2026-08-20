@@ -213,6 +213,7 @@
         "$mainMod, P, pseudo, # dwindle"
         # "$mainMod, J, togglesplit, # dwindle"
         "$mainMod, F, fullscreen, 1"
+        "$mainMod, G, fullscreen, 0"
         "$mainMod, L, exec, hyprlock"
         "$mainMod SHIFT, B, exec, killall -SIGUSR2 waybar || waybar"
 
@@ -254,6 +255,12 @@
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
 
+        # Discord keybinds
+        ", PAGEUP, pass, class:^(discord)$"
+        ", PAGEDOWN, pass, class:^(discord)$"
+
+        ", Prior, pass, class:^(discord)$"
+        ", Next, pass, class:^(discord)$"
       ];
 
       # Move/resize windows with mainMod + LMB/RMB and dragging

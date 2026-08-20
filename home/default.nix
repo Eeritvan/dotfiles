@@ -14,6 +14,7 @@
     ./zsh
     ./hyprland
     ./hyprlock
+    # ./niri
     # ./tmux
     ./zen
     ./brave
@@ -59,6 +60,8 @@
     pkgs.nil
     pkgs.libinput
     pkgs.python3
+    unstable.discord
+    pkgs.pnpm
 
     pkgs.better-control
     pkgs.adwaita-icon-theme
@@ -69,18 +72,20 @@
     pkgs.air
     pkgs.sqlc
     pkgs.gnumake
-    pkgs.eas-cli
+    unstable.eas-cli
     pkgs.bruno
     pkgs.android-tools
     pkgs.android-studio
     pkgs.javaPackages.compiler.openjdk17
-
     pkgs.awscli2
+    pkgs.prismlauncher
 
     (unstable.llama-cpp.override {
       cudaSupport = true;
     })
-    unstable.pi-coding-agent
+
+    inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.pi
+    inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.paseo-desktop
 
     unstable.statix
 

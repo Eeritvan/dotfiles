@@ -19,6 +19,9 @@
           "models": [
             {
               "id": "unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M"
+            },
+            {
+              "id": "unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q6_K"
             }
           ]
         }

@@ -172,6 +172,8 @@
     nano.enable = false;
   };
 
+  services.lact.enable = true;
+
   # bluetooth
   hardware.bluetooth = {
     enable = true;
