@@ -6,15 +6,27 @@
       inputs.home-manager.nixosModules.home-manager
     ];
 
-    nix.settings = {
-      substituters = [
-        "https://cache.nixos.org"
-        "https://niri.cachix.org"
-      ];
-      trusted-public-keys = [
-        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-        "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
-      ];
+    nix = {
+      settings.auto-optimise-store = true;
+      gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 7d";
+      };
+      settings = {
+        substituters = [
+          "https://cache.nixos.org"
+          "https://niri.cachix.org"
+        ];
+        experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
+        trusted-public-keys = [
+          "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+          "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
+        ];
+      };
     };
 
     home-manager = {
@@ -32,7 +44,14 @@
       };
     };
 
-    security.pam.services.swaylock = {};
+    security = {
+      pam.services.swaylock = {};
+      tpm2 = {
+        enable = true;
+        pkcs11.enable = true;
+        tctiEnvironment.enable = true;
+      };
+    };
 
     environment.systemPackages = [
       pkgs.sbctl # for secure boot
@@ -50,6 +69,7 @@
 
     boot = {
       loader.systemd-boot.enable = lib.mkForce false;
+      loader.systemd-boot.editor = false;
       loader.efi.canTouchEfiVariables = true;
 
       lanzaboote = {
@@ -107,11 +127,6 @@
       };
     };
 
-    services.hardware.openrgb = {
-      enable = true;
-      package = pkgs.openrgb-with-all-plugins;
-    };
-
     services.greetd = {
       enable = true;
       settings = rec {
@@ -138,6 +153,7 @@
           "docker"
           "kvm"
           "gamemode"
+          "tss"
         ];
       };
     };
@@ -157,14 +173,15 @@
       lact.enable = true;
       upower.enable = true;
       blueman.enable = true;
+      tailscale.enable = true;
+      tailscale.extraDaemonFlags = [ "--no-logs-no-support" ];
+      hardware.openrgb = {
+        enable = true;
+        package = pkgs.openrgb-with-all-plugins;
+      };
     };
 
     nixpkgs.config.allowUnfree = true;
-
-    nix.settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
 
     hardware.bluetooth = {
       enable = true;
