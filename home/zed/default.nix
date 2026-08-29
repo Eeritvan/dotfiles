@@ -1,9 +1,7 @@
-{ unstable, ... }:
-
-{
+{ pkgs, ... }: {
   programs.zed-editor = {
     enable = true;
-    package = unstable.zed-editor;
+    package = pkgs.zed-editor;
     extensions = [
       "html"
       "toml"

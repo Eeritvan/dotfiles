@@ -12,15 +12,16 @@
     ./ssh
     ./zed
     ./zsh
-    ./hyprland
-    ./hyprlock
-    # ./niri
+    ./swaylock
+    # ./hyprland
+    # ./hyprlock
+    ./niri
     # ./tmux
     ./zen
     ./brave
     ./ghostty
     ./wayle
-    ./pi
+    # ./pi
   ];
 
   nixpkgs = {
@@ -50,17 +51,16 @@
   };
 
   home.packages = [
-    # pkgs.ghostty
+    pkgs.ghostty
     pkgs.wofi
-    unstable.go
-    unstable.nodejs
-    unstable.bun
+    pkgs.go
+    pkgs.nodejs
     pkgs.pavucontrol
     pkgs.nixd
     pkgs.nil
     pkgs.libinput
     pkgs.python3
-    unstable.discord
+    pkgs.discord
     pkgs.pnpm
 
     pkgs.better-control
@@ -72,7 +72,6 @@
     pkgs.air
     pkgs.sqlc
     pkgs.gnumake
-    unstable.eas-cli
     pkgs.bruno
     pkgs.android-tools
     pkgs.android-studio
@@ -80,16 +79,18 @@
     pkgs.awscli2
     pkgs.prismlauncher
 
-    (unstable.llama-cpp.override {
-      cudaSupport = true;
-    })
+    pkgs.awww
 
-    inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.pi
-    inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.paseo-desktop
+    # (unstable.llama-cpp.override {
+    #   cudaSupport = true;
+    # })
 
-    unstable.statix
+    # inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.pi
+    # inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.paseo-desktop
 
-    inputs.brave-origin.packages.${pkgs.system}.brave-origin
+    # unstable.statix
+
+    # inputs.brave-origin.packages.${pkgs.system}.brave-origin
   ];
 
   # programs.steam = {

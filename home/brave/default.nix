@@ -1,11 +1,11 @@
 {
-  unstable,
+  pkgs,
   ...
 }:
 {
   programs.chromium = {
     enable = true;
-    package = unstable.brave;
+    package = pkgs.brave;
     extensions = [
       "fmkadmapgofadopljbjfkapdkoienihi" # react dev tools
     ];

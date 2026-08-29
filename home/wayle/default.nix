@@ -1,6 +1,4 @@
-# put this into your home-manager config
-{ pkgs, lib, ... }:
-{
+{ pkgs, lib, ... }: {
   # then you can use it as a normal program
   services.wayle = {
     enable = true;
@@ -13,6 +11,10 @@
           format = "%H:%M:%S";
           dropdown-show-seconds = false;
         };
+      };
+      wallpaper = {
+        engine-enabled = true;
+        cycling-directory = "/home/eeritvan/Downloads/abstract-grayscale-layered-wavy-shapes.jpg";
       };
     };
   };
