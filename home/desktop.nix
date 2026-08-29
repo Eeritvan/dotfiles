@@ -1,7 +1,5 @@
 {
   inputs,
-  # lib,
-  # config,
   pkgs,
   unstable,
   ...
@@ -13,8 +11,6 @@
     ./zed
     ./zsh
     ./swaylock
-    # ./hyprland
-    # ./hyprlock
     ./niri
     # ./tmux
     ./zen
