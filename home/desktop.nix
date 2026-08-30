@@ -1,10 +1,4 @@
-{
-  inputs,
-  pkgs,
-  unstable,
-  ...
-}:
-{
+{ pkgs, ... }: {
   imports = [
     ./git
     ./ssh
@@ -59,9 +53,6 @@
     pkgs.discord
     pkgs.pnpm
 
-    pkgs.better-control
-    pkgs.adwaita-icon-theme
-
     pkgs.gcc
     pkgs.binutils
     pkgs.goose
@@ -77,40 +68,14 @@
 
     pkgs.awww
 
-    # (unstable.llama-cpp.override {
+    # (pkgs.llama-cpp.override {
     #   cudaSupport = true;
     # })
 
     # inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.pi
-    # inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.paseo-desktop
 
-    # unstable.statix
-
-    # inputs.brave-origin.packages.${pkgs.system}.brave-origin
+    # pkgs.statix
   ];
-
-  # programs.steam = {
-  #   enable = true;
-  #   remotePlay.openFirewall = false;
-  #   dedicatedServer.openFirewall = false;
-  #   localNetworkGameTransfers.openFirewall = false;
-  # };
-
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. These will be explicitly sourced when using a
-  # shell provided by Home Manager. If you don't want to manage your shell
-  # through Home Manager then you have to manually source 'hm-session-vars.sh'
-  # located at either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-
-  #  /etc/profiles/per-user/eeritvan/etc/profile.d/hm-session-vars.sh
 
   home = {
     username = "eeritvan";
