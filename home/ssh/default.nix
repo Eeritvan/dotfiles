@@ -4,8 +4,7 @@
     enable = true;
     settings = {
       "github.com" = {
-        identityFile = "~/.ssh/github";
-        # pkcs11Provider = "/run/current-system/sw/lib/libtpm2_pkcs11.so";
+        pkcs11Provider = "/run/current-system/sw/lib/libtpm2_pkcs11.so";
       };
 
       "unari" = {

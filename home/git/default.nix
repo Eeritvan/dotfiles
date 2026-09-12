@@ -15,9 +15,7 @@
       };
     };
     signing = {
-      # TODO format = "";
-      # pkcs11Provider = "/run/current-system/sw/lib/libtpm2_pkcs11.so";
-      key = "~/.ssh/github.pub";
+      key = "~/.ssh/ssh.pub";
       signByDefault = true;
     };
   };
