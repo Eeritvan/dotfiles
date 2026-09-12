@@ -53,7 +53,14 @@
         metrics = false;
       };
       agent = {
+        dock = "right";
         sidebar_side = "right";
+      };
+      project_panel = {
+        dock = "left";
+      };
+      outline_panel = {
+        dock = "left";
       };
       languages = {
         JavaScript = {

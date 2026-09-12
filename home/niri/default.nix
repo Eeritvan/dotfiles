@@ -118,10 +118,9 @@
           };
         };
         mouse = {
-          # off
           # natural-scroll;
-          # accel-speed 0.2
-          # accel-profile "flat"
+          accel-speed = -0.8;
+          accel-profile = "flat";
           # scroll-factor 1.0
           # scroll-factor vertical=1.0 horizontal=-2.0
           # scroll-method "no-scroll"
@@ -132,7 +131,7 @@
         };
         touchpad = {
           # off
-          tap = true;
+          # tap = true;
           # dwt
           # dwtp
           # drag false

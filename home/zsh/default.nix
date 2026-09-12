@@ -16,5 +16,8 @@
       zed = "zeditor";
       hm = "home-manager";
     };
+    initContent = ''
+      eval "$(devenv hook zsh)"
+    '';
   };
 }

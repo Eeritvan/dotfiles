@@ -4,7 +4,8 @@
     enable = true;
     settings = {
       "github.com" = {
-        identityFile = "~/.ssh/github_ed25519";
+        identityFile = "~/.ssh/github";
+        # pkcs11Provider = "/run/current-system/sw/lib/libtpm2_pkcs11.so";
       };
 
       "unari" = {
@@ -14,7 +15,7 @@
       "server" = {
         hostname = "100.74.93.15";
         port = 2222;
-        identityFile = "~/.ssh/hetzner_ed25519";
+        pkcs11Provider = "/run/current-system/sw/lib/libtpm2_pkcs11.so";
       };
     };
   };

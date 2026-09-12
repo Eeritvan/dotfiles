@@ -102,7 +102,7 @@
       graphics.enable = true;
       nvidia = {
         # TODO: fix this once nvidia fixes their drivers
-        # package = config.boot.kernelPackages.nvidiaPackages.beta;
+        package = config.boot.kernelPackages.nvidiaPackages.bleeding_edge;
         modesetting.enable = true;
         nvidiaSettings = true;
         open = true;
@@ -132,7 +132,6 @@
       settings = rec {
         initial_session = {
           command = "niri";
-          # command = "start-hyprland";
           user = "eeritvan";
         };
         default_session = initial_session;
@@ -218,6 +217,11 @@
       remotePlay.openFirewall = false;
       dedicatedServer.openFirewall = false;
       localNetworkGameTransfers.openFirewall = false;
+    };
+
+    programs.ssh = {
+      startAgent = true;
+      agentPKCS11Whitelist = "${config.security.tpm2.pkcs11.package}/lib/*,/run/current-system/sw/lib/*";
     };
 
     system.stateVersion = "26.05";
