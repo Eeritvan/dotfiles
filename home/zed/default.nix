@@ -39,6 +39,7 @@
       title_bar = {
         show_sign_in = false;
       };
+      scroll_sensitivity = 2;
       tab_bar = {
         show_nav_history_buttons = false;
       };

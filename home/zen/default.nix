@@ -25,7 +25,7 @@
         "browser.theme.content-theme" = 2;
         "browser.theme.toolbar-theme" = 2;
 
-        "mousewheel.default.delta_multiplier_y" = 50;
+        "mousewheel.default.delta_multiplier_y" = 150;
         "browser.translations.automaticallyPopup" = false;
 
         "zen.view.experimental-no-window-controls" = true;

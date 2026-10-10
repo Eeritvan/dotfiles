@@ -36,6 +36,8 @@
     pkgs.android-studio
     pkgs.javaPackages.compiler.openjdk17
 
+    pkgs.obsidian
+
     # (pkgs.llama-cpp.override {
     #   cudaSupport = true;
     # })

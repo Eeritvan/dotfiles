@@ -121,7 +121,7 @@
           # natural-scroll;
           accel-speed = -0.8;
           accel-profile = "flat";
-          # scroll-factor 1.0
+          scroll-factor = 2.2;
           # scroll-factor vertical=1.0 horizontal=-2.0
           # scroll-method "no-scroll"
           # scroll-button 273
@@ -138,6 +138,7 @@
           # drag-lock
           natural-scroll = true;
           accel-speed = 0.2;
+          scroll-factor = 0.3;
           # accel-profile "flat"
           # scroll-factor 1.0
           # scroll-factor vertical=1.0 horizontal=-2.0
